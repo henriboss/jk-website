@@ -193,7 +193,7 @@ const JK_CONTENT = {
       mingaAddress: "PY-02, Km 7 - Minga Guazú"
     },
     cookieBanner: {
-      text: "Utilizamos cookies para melhorar sua experiência.",
+      text: "Utilizamos cookies.",
       accept: "Aceitar",
       reject: "Recusar"
     }
@@ -284,11 +284,6 @@ const JK_CONTENT = {
       phone: "Teléfono",
       facebook: "Facebook",
       instagram: "Instagram"
-    },
-    nav: {
-      empresa: "Empresa",
-      linhas: "Líneas",
-      contato: "Contacto"
     },
     footer: {
       tagline: "Renová tus colores.",
@@ -394,7 +389,7 @@ toast: {
       mingaAddress: "PY-02, Km 7 - Minga Guazú"
     },
     cookieBanner: {
-      text: "Utilizamos cookies para mejorar su experiencia.",
+      text: "Utilizamos cookies.",
       accept: "Aceptar",
       reject: "Rechazar"
     }
