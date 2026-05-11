@@ -93,6 +93,8 @@ const JK_CONTENT = {
       tagline: "Renove suas cores.",
       contactTitle: "Contato",
       linhasTitle: "Linhas",
+      storesTitle: "Nossas Lojas",
+      legalTitle: "Legal",
       addressTitle: "Endereço",
       address1: "Avenida Monseñor Rodriguez",
       address2: "Ciudad del Este 7000",
@@ -133,6 +135,67 @@ const JK_CONTENT = {
         { name: "Sandra Vargas", city: "Ciudad del Este", product: "Tinta Epóxi Industrial" },
         { name: "Roberto Casas", city: "Assunção", product: "Tinta Látex Premium" }
       ]
+    },
+    lgpd: {
+      title: "Política de Privacidade - LGPD",
+      intro: "A JK Pinturas S.A. respeita sua privacidade e está comprometida em proteger seus dados pessoais.",
+      sections: [
+        {
+          title: "1. Coleta de Dados",
+          content: "Coletamos apenas dados necessários para为您提供 um melhor atendimento: nome, email, telefone e mensagem através do nosso formulário de contato."
+        },
+        {
+          title: "2. Finalidade",
+          content: "Seus dados são utilizados exclusivamente para: responder suas consultas, enviar orçamentos solicitados e informar sobre novos produtos e promoções."
+        },
+        {
+          title: "3. Proteção",
+          content: "Implementamos medidas de segurança adequadas para proteger seus dados contra acesso não autorizado, alteração ou destruição."
+        },
+        {
+          title: "4. Seus Direitos",
+          content: "Você tem direito a: acesso aos seus dados, correção, exclusão, portabilidade e revogação do consentimento. Para exercer, entre em contato conosco."
+        },
+        {
+          title: "5. Contato",
+          content: "Para questões sobre esta política ou exercícios de seus direitos, contate-nos pelo email: contato@jkpinturas.com"
+        }
+      ]
+    },
+    cookies: {
+      title: "Política de Cookies",
+      intro: "Utilizamos cookies para melhorar sua experiência em nosso site.",
+      sections: [
+        {
+          title: "1. O que são Cookies",
+          content: "Cookies são pequenos arquivos de texto armazenados no seu navegador quando você visita um site."
+        },
+        {
+          title: "2. Tipos de Cookies",
+          content: "• Essenciais: necessários para o funcionamento do site.\n• Analíticos: nos ajudam a entender como os visitantes usam o site.\n• Marketing: utilizados para exibir anúncios relevantes."
+        },
+        {
+          title: "3. Como Usamos",
+          content: "Utilizamos cookies para: lembrar suas preferências, analisar estatísticas de acesso e melhorar nossos serviços."
+        },
+        {
+          title: "4. Gerenciamento",
+          content: "Você pode aceitar, rejeitar ou gerenciar cookies através das configurações do seu navegador. A rejeição pode afetar algumas funcionalidades do site."
+        }
+      ]
+    },
+    stores: {
+      matriz: "Matriz - Ciudad del Este",
+      matrizAddress: "Avenida Monseñor Rodriguez, Ciudad del Este",
+      asu: "Loja ASU - Assunção",
+      asuAddress: "Av. República Argentina, Asunción",
+      minga: "Loja Minga Guazú",
+      mingaAddress: "PY-02, Km 7 - Minga Guazú"
+    },
+    cookieBanner: {
+      text: "Utilizamos cookies para melhorar sua experiência.",
+      accept: "Aceitar",
+      reject: "Recusar"
     }
   },
   es: {
@@ -231,6 +294,8 @@ const JK_CONTENT = {
       tagline: "Renová tus colores.",
       contactTitle: "Contacto",
       linhasTitle: "Líneas",
+      storesTitle: "Nuestras Tiendas",
+      legalTitle: "Legal",
       addressTitle: "Dirección",
       address1: "Avenida Monseñor Rodriguez",
       address2: "Ciudad del Este 7000",
@@ -271,6 +336,67 @@ toast: {
         { name: "Sandra Ortega", city: "Ciudad del Este", product: "Pintura Epóxi Industrial" },
         { name: "Roberto Casas", city: "Asunción", product: "Pintura Látex Premium" }
       ]
+    },
+    lgpd: {
+      title: "Política de Privacidad - LGPD",
+      intro: "JK Pinturas S.A. respeta su privacidad y está comprometida a proteger sus datos personales.",
+      sections: [
+        {
+          title: "1. Recolección de Datos",
+          content: "Solo recopilamos datos necesarios para ayudarle: nombre, email, teléfono y mensaje a través de nuestro formulario de contacto."
+        },
+        {
+          title: "2. Finalidad",
+          content: "Sus datos se utilizan exclusivamente para: responder sus consultas, enviar presupuestos solicitados e informar sobre nuevos productos y promociones."
+        },
+        {
+          title: "3. Protección",
+          content: "Implementamos medidas de seguridad adecuadas para proteger sus datos contra acceso no autorizado, alteración o destrucción."
+        },
+        {
+          title: "4. Sus Derechos",
+          content: "Usted tiene derecho a: acceso a sus datos, corrección, eliminación, portabilidad y revocación del consentimiento. Para ejercer, contáctenos."
+        },
+        {
+          title: "5. Contacto",
+          content: "Para cuestiones sobre esta política o ejercicio de sus derechos, contáctenos al email: contacto@jkpinturas.com"
+        }
+      ]
+    },
+    cookies: {
+      title: "Política de Cookies",
+      intro: "Utilizamos cookies para mejorar su experiencia en nuestro sitio.",
+      sections: [
+        {
+          title: "1. Qué son Cookies",
+          content: "Cookies son pequeños archivos de texto almacenados en su navegador cuando visita un sitio web."
+        },
+        {
+          title: "2. Tipos de Cookies",
+          content: "• Esenciales: necesarios para el funcionamiento del sitio.\n• Analíticos: nos ayudan a entender cómo los visitantes usan el sitio.\n• Marketing: utilizados para mostrar anuncios relevantes."
+        },
+        {
+          title: "3. Cómo Usamos",
+          content: "Utilizamos cookies para: recordar sus preferencias, analizar estadísticas de acceso y mejorar nuestros servicios."
+        },
+        {
+          title: "4. Gestión",
+          content: "Puede aceptar, rechazar o gestionar cookies a través de la configuración de su navegador. El rechazo puede afectar algunas funcionalidades del sitio."
+        }
+      ]
+    },
+    stores: {
+      matriz: "Matriz - Ciudad del Este",
+      matrizAddress: "Avenida Monseñor Rodriguez, Ciudad del Este",
+      asu: "Tienda ASU - Asunción",
+      asuAddress: "Av. República Argentina, Asunción",
+      minga: "Tienda Minga Guazú",
+      mingaAddress: "PY-02, Km 7 - Minga Guazú"
+    },
+    cookieBanner: {
+      text: "Utilizamos cookies para mejorar su experiencia.",
+      accept: "Aceptar",
+      reject: "Rechazar"
     }
   }
 };

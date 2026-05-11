@@ -10,10 +10,13 @@
     init() {
       this.apply();
       this.bindEvents();
+      this.initCookieBanner();
+      this.initPolicyModal();
     },
 
     apply() {
       document.documentElement.lang = this.lang;
+      this.applyCookieBanner();
       this.applyNav();
       this.applyHero();
       this.applyLines();
@@ -60,6 +63,25 @@
       this.setText('[data-i18n="hero.subtitle"]', this.t('hero.subtitle'));
       this.setText('[data-i18n="hero.cta1"]', this.t('hero.cta1'));
       this.setText('[data-i18n="hero.cta2"]', this.t('hero.cta2'));
+    },
+
+    applyCookieBanner() {
+      const cookieText = document.getElementById('cookie-text');
+      const cookieTextExtra = document.getElementById('cookie-text-extra');
+      const cookieReject = document.getElementById('cookie-reject');
+      const cookieAccept = document.getElementById('cookie-accept');
+      
+      const banner = this.t('cookieBanner');
+      if (!banner) return;
+      
+      if (cookieText) cookieText.textContent = banner.text;
+      if (cookieTextExtra) {
+        cookieTextExtra.textContent = this.lang === 'pt' 
+          ? 'para melhorar sua experiência.' 
+          : 'para mejorar su experiencia.';
+      }
+      if (cookieReject) cookieReject.textContent = banner.reject;
+      if (cookieAccept) cookieAccept.textContent = banner.accept;
     },
 
     applyLines() {
@@ -448,6 +470,103 @@ updateLangSwitch() {
           }
         }
       }
+    },
+
+    // Cookie Banner (Bottom Popup)
+    initCookieBanner() {
+      const banner = document.getElementById('cookie-banner');
+      if (!banner) return;
+
+      // Para teste: remova essa linha em produção se quiserremember a escolha
+      // localStorage.removeItem('jk.cookies.consent'); // Descomente para testar sempre
+
+      const consent = localStorage.getItem('jk.cookies.consent');
+      
+      // Mostrar banner apenas se não houve escolha anterior
+      if (!consent) {
+        // Delay de 1 segundo para animação
+        setTimeout(() => {
+          banner.classList.add('visible');
+        }, 1000);
+      }
+
+      document.getElementById('cookie-accept')?.addEventListener('click', () => {
+        localStorage.setItem('jk.cookies.consent', 'accepted');
+        banner.classList.remove('visible');
+      });
+
+      document.getElementById('cookie-reject')?.addEventListener('click', () => {
+        localStorage.setItem('jk.cookies.consent', 'rejected');
+        banner.classList.remove('visible');
+      });
+    },
+
+    // Policy Modal
+    initPolicyModal() {
+      const overlay = document.getElementById('policy-modal-overlay');
+      if (!overlay) return;
+
+      const closeBtn = document.getElementById('policy-modal-close');
+      const tabs = document.querySelectorAll('.policy-modal-tab');
+      const content = document.getElementById('policy-modal-content');
+
+      function openModal(tab = 'lgpd') {
+        this.switchPolicyTab(tab);
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      closeBtn?.addEventListener('click', closeModal.bind(this));
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal.call(this);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal.call(this);
+      });
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          this.switchPolicyTab(tab.dataset.tab);
+        });
+      });
+
+      // Links in footer
+      document.querySelectorAll('[data-policy]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal.call(this, link.dataset.policy);
+        });
+      });
+    },
+
+    switchPolicyTab(tab) {
+      const tabs = document.querySelectorAll('.policy-modal-tab');
+      const content = document.getElementById('policy-modal-content');
+      const lang = this.lang;
+
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+
+      const data = JK_CONTENT[lang][tab];
+      if (!data) return;
+
+      const titleEl = document.getElementById('policy-modal-title');
+      if (titleEl) titleEl.textContent = data.title;
+
+      let html = `<p class="policy-modal-intro">${data.intro}</p>`;
+      data.sections.forEach(section => {
+        html += `
+          <div class="policy-section">
+            <h3 class="policy-section-title">${section.title}</h3>
+            <p class="policy-section-content">${section.content}</p>
+          </div>
+        `;
+      });
+      content.innerHTML = html;
     }
   };
 

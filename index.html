@@ -337,6 +337,9 @@
           <a href="https://www.instagram.com/jkpinturas.py?igsh=MXA5cWl3ZXphNW51cg==" class="channel-link" target="_blank" rel="noopener" aria-label="Instagram">
             <img src="assets/instagram.svg" alt="Instagram" class="channel-icon">
           </a>
+          <a href="https://www.facebook.com/jkpinturasdistribuidora/" class="channel-link" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="assets/facebook.svg" alt="Facebook" class="channel-icon">
+          </a>
           <a href="https://py.linkedin.com/company/jk-pinturas-s-a" class="channel-link" target="_blank" rel="noopener" aria-label="LinkedIn">
             <img src="assets/linkedin.svg" alt="LinkedIn" class="channel-icon">
           </a>
@@ -345,6 +348,35 @@
     </div>
   </div>
 </section>
+
+<!-- Cookie Banner (Bottom Popup) -->
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-banner-content">
+    <img src="assets/cookie.png" alt="Cookie" class="cookie-icon">
+    <p class="cookie-banner-text"><strong id="cookie-text"></strong> <span id="cookie-text-extra">para melhorar sua experiência.</span></p>
+  </div>
+  <div class="cookie-banner-buttons">
+    <button type="button" class="cookie-btn cookie-btn-reject" id="cookie-reject">Recusar</button>
+    <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Aceitar</button>
+  </div>
+</div>
+
+<!-- Policy Modal -->
+<div class="policy-modal-overlay" id="policy-modal-overlay">
+  <div class="policy-modal" role="dialog" aria-labelledby="policy-modal-title">
+    <div class="policy-modal-header">
+      <h2 class="policy-modal-title" id="policy-modal-title">Política de Privacidade</h2>
+      <button type="button" class="policy-modal-close" id="policy-modal-close" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="policy-modal-tabs">
+      <button type="button" class="policy-modal-tab active" data-tab="lgpd">LGPD</button>
+      <button type="button" class="policy-modal-tab" data-tab="cookies">Cookies</button>
+    </div>
+    <div class="policy-modal-content" id="policy-modal-content">
+      <!-- Content dynamically loaded -->
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -366,13 +398,11 @@
       </div>
 
       <div class="footer-address">
-        <h4 data-i18n="footer.addressTitle">Endereço</h4>
+        <h4>Endereços</h4>
         <ul>
-          <li data-i18n="footer.address1">Avenida Monseñor Rodriguez</li>
-          <li data-i18n="footer.address2">Ciudad del Este 7000</li>
-          <li data-i18n="footer.address3">Alto Paraná, Paraguay</li>
-          <li data-i18n="footer.address4">Rua Internacional Nro. VII — Km. 7</li>
-          <li data-i18n="footer.address5">Barrio Ciudad Nueva</li>
+          <li><a href="https://maps.google.com/?q=JK+Pinturas+Ciudad+del+Este" target="_blank" rel="noopener">Matriz - Ciudad del Este</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Loja ASU - Assunção</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Loja Minga Guazú</a></li>
         </ul>
       </div>
 
@@ -383,13 +413,16 @@
           <li><a href="mailto:contato@jkpinturas.com">contato@jkpinturas.com</a></li>
           <li><a href="https://www.tiktok.com/@jkpinturascde?_r=1&_t=ZS-965ut2w14Sb" target="_blank">TikTok</a></li>
           <li><a href="https://www.instagram.com/jkpinturas.py?igsh=MXA5cWl3ZXphNW51cg==" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/jkpinturasdistribuidora/" target="_blank">Facebook</a></li>
           <li><a href="https://py.linkedin.com/company/jk-pinturas-s-a" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span data-i18n="footer.copy">© 2026 JK Pinturas S.A. — Todos os direitos reservados.</span>
+      <span>© 2026 JK Pinturas S.A. — Todos os direitos reservados.
+        <a href="#" data-policy="lgpd">LGPD</a> | <a href="#" data-policy="cookies">Cookies</a>
+      </span>
       <span></span>
     </div>
   </div>
